@@ -24,7 +24,6 @@ const depfthFirstValues = (root) => {
   const stack = [root];
   while (stack.length > 0) {
     const current = stack.pop();
-    console.log(stack);
 
     if (current.left) stack.push(current.left);
     if (current.right) stack.push(current.right);
@@ -32,3 +31,13 @@ const depfthFirstValues = (root) => {
 };
 
 depfthFirstValues(a);
+
+const depthFirstRecussive = (root) => {
+  if (root === null) return [];
+  const leftValues = depthFirstRecussive(root.left);
+  const rightValues = depthFirstRecussive(root.right);
+  console.log([root.val, ...leftValues, ...rightValues]);
+  return [root.val, ...leftValues, ...rightValues];
+};
+
+depthFirstRecussive(a);

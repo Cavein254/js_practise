@@ -1,3 +1,11 @@
+    //         a
+    //       /   \
+    //     b     c
+    //   /   \     \
+    // d     e       f
+
+
+
 class Node {
   constructor(val) {
     this.val = val;
